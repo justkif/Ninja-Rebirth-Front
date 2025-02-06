@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [isMobile, setMobile] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined
   })
-  const [isMobile, setMobile] = useState(false);
 
   useEffect(() => {
     const handleSize = () => {
@@ -29,6 +29,7 @@ function App() {
       setMobile(false);
     }
   }, [windowSize])
+  
   return (
     <div className='h-screen px-4 py-4 bg-gradient-to-b from-orange-400 to-yellow-30'>
       <Navbar isMobile={isMobile}/>
