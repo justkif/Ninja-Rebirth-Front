@@ -3,7 +3,7 @@ import { GiNinjaStar } from "react-icons/gi";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 
-function Navbar(props) {
+export default function Navbar(props) {
     const {isMobile} = props;
     const [openMenu, setOpenMenu] = useState(false);
     const handleMenu = () => {
@@ -37,5 +37,3 @@ function Navbar(props) {
         </nav>
     )
 }
-
-export default Navbar
