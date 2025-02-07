@@ -1,6 +1,6 @@
-import './App.css'
-import Navbar from './components/Navbar/Navbar'
 import { useEffect, useState } from 'react'
+import Navbar from './components/Navbar/Navbar'
+import './App.css'
 
 function App() {
   const [isMobile, setMobile] = useState(false);
