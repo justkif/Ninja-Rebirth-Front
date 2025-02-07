@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
-import Navbar from './components/Navbar/Navbar'
-import './App.css'
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import NinjaCards from "./components/NinjaCards";
+import "./App.css";
 
 function App() {
   const [isMobile, setMobile] = useState(false);
@@ -22,17 +23,18 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if(windowSize.width < 500) {
+    if (windowSize.width < 500) {
       setMobile(true);
     }
     else {
       setMobile(false);
     }
   }, [windowSize])
-  
+
   return (
-    <div className='h-screen px-4 py-4 bg-gradient-to-b from-orange-400 to-yellow-30'>
-      <Navbar isMobile={isMobile}/>
+    <div className="h-screen px-4 py-4 bg-gradient-to-b from-orange-400 to-yellow-30 ">
+      <Navbar isMobile={isMobile} />
+      <NinjaCards/>
     </div>
   )
 }
