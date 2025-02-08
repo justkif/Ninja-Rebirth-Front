@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Ninja from "./Ninja"; 
-import GetAll from "./GetAll";
+import Get from "./Get";
 
 export default function Main() {
     const [ninja, setNinja] = useState([]);
     return (
         <main>
-            <GetAll setNinja={setNinja} />
+            <Get setNinja={setNinja} />
             <div className="container mx-auto mt-4">
                 <div className="grid grid-cols-5 gap-4">
                     {ninja.map((ninja) => (
