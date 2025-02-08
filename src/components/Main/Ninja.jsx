@@ -1,7 +1,7 @@
 export default function Ninja(props) {
     return (
         <div className="shadow-lg rounded-xl cursor-pointer">
-            <img src="https://cdn3.iconfinder.com/data/icons/meteocons/512/n-a-512.png" className="rounded-t-xl"/>
+            <img src="https://img.lazcdn.com/g/p/17b05fb99ddb3ca4bf9b1fbddbde0f06.jpg_720x720q80.jpg_.webp" className="rounded-t-xl"/>
             <div className="font-bold text-[16px] p-2"> {props.ninja.name} </div>
         </div>
     )
