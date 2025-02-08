@@ -15,7 +15,6 @@ export default function Navbar(props) {
                 <GiNinjaStar className="size-[30px] cursor-pointer"/>
                 <div className="text-[20px] font-bold ml-1 cursor-pointer"> NR Wiki </div>
             </div>
-            <input className="bg-white ml-2 rounded-xl h-[30px]"/>
             <ul className="ml-auto text[20px] font-bold">
                 {openMenu && isMobile ? (
                     <MdOutlineClose className="size-[30px] cursor-pointer" onClick={handleMenu}/>
