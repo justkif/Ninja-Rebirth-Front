@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { GiNinjaStar } from "react-icons/gi";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
@@ -11,10 +12,10 @@ export default function Navbar(props) {
     }
     return (
         <nav className="flex item-center">
-            <div className="flex item-center">
+            <Link className="flex item-center" to={"/"}> {}
                 <GiNinjaStar className="size-[30px] cursor-pointer"/>
                 <div className="text-[20px] font-bold ml-1 cursor-pointer"> NR Wiki </div>
-            </div>
+            </Link>
             <ul className="ml-auto text[20px] font-bold">
                 {openMenu && isMobile ? (
                     <MdOutlineClose className="size-[30px] cursor-pointer" onClick={handleMenu}/>
