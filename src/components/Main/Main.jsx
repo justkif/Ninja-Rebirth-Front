@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Ninja from "./Ninja"; 
 import Get from "./Get";
 
@@ -10,7 +11,9 @@ export default function Main() {
             <div className="container mx-auto mt-4">
                 <div className="grid grid-cols-5 gap-4">
                     {ninja.map((ninja) => (
-                        <Ninja key={ninja.id} ninja={ninja} />
+                        <Link to={`/ninja/${ninja.name}`} key={ninja.id}> {/* Wrap each Ninja with Link */}
+                            <Ninja ninja={ninja} />
+                        </Link>
                     ))}
                 </div>
             </div>        
