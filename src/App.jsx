@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Main from "./components/Main/Main";
-import GetOne from "./components/Main/GetOne";
 import "./App.css";
 
 function App() {
@@ -33,13 +32,10 @@ function App() {
   }, [windowSize]);
 
   return (
-    <Router> {}
-      <div className="h-screen px-4 py-4 bg-gradient-to-b from-orange-400 to-yellow-30 ">
+    <Router>
+      <div className="h-screen px-4 py-4 bg-gradient-to-b from-orange-400 to-yellow-30">
         <Navbar isMobile={isMobile} />
-        <Routes> {}
-          <Route path="/" element={<Main />} /> {}
-          <Route path="/ninja/:id" element={<GetOne />} /> {}
-        </Routes>
+        <Main />
       </div>
     </Router>
   );

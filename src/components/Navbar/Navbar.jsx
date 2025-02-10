@@ -12,7 +12,7 @@ export default function Navbar(props) {
     }
     return (
         <nav className="flex item-center">
-            <Link className="flex item-center" to={"/"}> {}
+            <Link className="flex item-center" to={`/`}> {}
                 <GiNinjaStar className="size-[30px] cursor-pointer"/>
                 <div className="text-[20px] font-bold ml-1 cursor-pointer"> NR Wiki </div>
             </Link>
