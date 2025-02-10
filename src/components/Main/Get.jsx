@@ -4,21 +4,21 @@ export default function Get({ setNinja }) {
     const [text, setText] = useState('');
 
     useEffect(() => {
-        if (text) {
-            fetch(`http://localhost:8080/search?name=${text}`)
-                .then((response) => response.json())
-                .then((data) => {
-                    setNinja(data);
-                })
-                .catch((error) => console.log(error));
-        } else {
-            fetch("http://localhost:8080/")
-                .then((response) => response.json())
-                .then((data) => {
-                    setNinja(data);
-                })
-                .catch((error) => console.log(error));
-        }}, [setNinja, text]);
+        const Get = async () => {
+            try {
+                const response = await fetch(text ? `http://localhost:8080/search?name=${text}` : `http://localhost:8080`);
+
+                if (response.status === 404) {
+                    setNinja([]);
+                } else {
+                    setNinja(await response.json());
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        Get();
+    }, [setNinja, text]);
         
     return (
         <form className="mt-2 flex justify-center">
