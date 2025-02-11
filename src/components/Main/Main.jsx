@@ -7,7 +7,7 @@ export default function Main() {
     const [ninja, setNinja] = useState([]);
     return (
         <main>
-            <Routes> {}
+            <Routes> 
                 <Route path="/" element={<Get ninja={ninja} setNinja={setNinja} />} />                
                 <Route path="/ninja/:id" element={<GetOne />} />
             </Routes>
