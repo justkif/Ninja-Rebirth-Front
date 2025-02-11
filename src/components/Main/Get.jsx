@@ -30,7 +30,7 @@ export default function Get({ setNinja, ninja }) {
             <div className="container mx-auto mt-4">
                 <div className="grid grid-cols-5 gap-4">
                     {ninja.map((ninja) => (
-                        <Link to={`/ninja/${ninja.name}`} key={ninja.id}> {}
+                        <Link to={`/ninja/${ninja.id}`} key={ninja.id}> {}
                             <Ninja ninja={ninja} />
                         </Link>
                     ))}
