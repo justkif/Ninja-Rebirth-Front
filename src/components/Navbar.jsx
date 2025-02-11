@@ -4,15 +4,14 @@ import { GiNinjaStar } from "react-icons/gi";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 
-export default function Navbar(props) {
-    const {isMobile} = props;
+export default function Navbar({ isMobile }) {
     const [openMenu, setOpenMenu] = useState(false);
     const handleMenu = () => {
         setOpenMenu(!openMenu);
     }
     return (
         <nav className="flex item-center">
-            <Link className="flex item-center" to={`/`}> {}
+            <Link className="flex item-center" to={`/`}> 
                 <GiNinjaStar className="size-[30px] cursor-pointer"/>
                 <div className="text-[20px] font-bold ml-1 cursor-pointer"> NR Wiki </div>
             </Link>
@@ -24,7 +23,7 @@ export default function Navbar(props) {
                 ) : (
                     <div className="flex item-center ">
                         <li className="cursor-pointer mr-8 hover:text-orange-200 transition-all duration-200">Add ninja</li>
-                        <li className="cursor-pointer hover:text-orange-200 transition-all duration-200">Login</li>
+                        <Link className="cursor-pointer hover:text-orange-200 transition-all duration-200" to={`/login`}>Login</Link>
                     </div>
                 )}
                 {openMenu && (
@@ -35,5 +34,5 @@ export default function Navbar(props) {
                 )}
             </ul>
         </nav>
-    )
+    );
 }
