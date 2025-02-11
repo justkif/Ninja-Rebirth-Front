@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Main from "./components/Main/Main";
+import Login from "./components/Login";
 import "./App.css";
 
 function App() {
@@ -34,8 +35,10 @@ function App() {
   return (
     <Router>
       <div className="h-screen px-4 py-4 bg-gradient-to-b from-orange-400 to-yellow-30">
-        <Navbar isMobile={isMobile} />
-        <Main />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<><Navbar isMobile={isMobile} /><Main /></>} />
+        </Routes>
       </div>
     </Router>
   );
