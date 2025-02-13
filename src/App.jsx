@@ -5,18 +5,18 @@ import Main from "./components/Main/Main";
 import Login from "./components/Login";
 import "./App.css";
 
-function App() {
+export default function App() {
   const [isMobile, setMobile] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: undefined,
-    height: undefined,
+    height: undefined
   });
 
   useEffect(() => {
     const handleSize = () => {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: window.innerHeight
       });
     }
     window.addEventListener("resize", handleSize);
@@ -43,5 +43,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

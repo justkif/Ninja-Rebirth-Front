@@ -13,7 +13,7 @@ export default function Navbar({ isMobile }) {
         <nav className="flex item-center">
             <Link className="flex item-center" to={`/`}> 
                 <GiNinjaStar className="size-[30px] cursor-pointer"/>
-                <div className="text-[20px] font-bold ml-1 cursor-pointer"> NR Wiki </div>
+                <div className="text-[20px] font-bold ml-1 cursor-pointer">NR Wiki</div>
             </Link>
             <ul className="ml-auto text[20px] font-bold">
                 {openMenu && isMobile ? (
@@ -28,8 +28,8 @@ export default function Navbar({ isMobile }) {
                 )}
                 {openMenu && (
                     <div className="absolute right-8 bg-white p-6 text-center rounded-xl">
-                        <li className="cursor-pointer">Add ninja</li>
-                        <li className="cursor-pointer mt-2">Login</li>
+                        <li className="cursor-pointer block">Add ninja</li>
+                        <Link className="cursor-pointer block mt-2" to={`/login`}>Login</Link>
                     </div>
                 )}
             </ul>
