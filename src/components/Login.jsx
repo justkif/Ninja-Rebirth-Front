@@ -24,9 +24,9 @@ export default function Login() {
 
             if (response.ok) {
                 console.log('Login successful');
-                setUnauthorized(true);
+                setUnauthorized(false);
             } else {
-                setUnauthorized(false);            
+                setUnauthorized(true);  
             }
         } catch (error) {
             console.error(error);
