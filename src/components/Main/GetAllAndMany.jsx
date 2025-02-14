@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Ninja from "./Ninja";
 
-export default function Get({ setNinja, ninja }) {
+export default function GetAllAndMany({ setNinja, ninja }) {
     const [text, setText] = useState('');
 
     useEffect(() => {
