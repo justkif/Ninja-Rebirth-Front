@@ -9,12 +9,7 @@ export default function GetOne() {
         const GetOne = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/${id.id}`);
-
-                if (response.status === 404) {
-                    return <h1>Ninja Not Found</h1>
-                } else {
-                    setNinja(await response.json());
-                }
+                setNinja(await response.json());
             } catch (error) {
                 console.log(error);
             }

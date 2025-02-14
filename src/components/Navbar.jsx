@@ -11,9 +11,9 @@ export default function Navbar({ isMobile }) {
     }
     return (
         <nav className="flex item-center">
-            <Link className="flex item-center" to={`/`}> 
-                <GiNinjaStar className="size-[30px] cursor-pointer"/>
-                <div className="text-[20px] font-bold ml-1 cursor-pointer">NR Wiki</div>
+            <Link className="flex item-center cursor-pointer" to={`/`}> 
+                <GiNinjaStar className="size-[30px]"/>
+                <div className="text-[20px] font-bold ml-1">NR Wiki</div>
             </Link>
             <ul className="ml-auto text[20px] font-bold">
                 {openMenu && isMobile ? (
@@ -21,7 +21,7 @@ export default function Navbar({ isMobile }) {
                 ) : !openMenu && isMobile ? (
                     <HiOutlineMenu className="size-[30px] cursor-pointer" onClick={handleMenu}/>
                 ) : (
-                    <div className="flex item-center ">
+                    <div className="flex item-center">
                         <li className="cursor-pointer mr-8 hover:text-orange-200 transition-all duration-200">Add ninja</li>
                         <Link className="cursor-pointer hover:text-orange-200 transition-all duration-200" to={`/login`}>Login</Link>
                     </div>
