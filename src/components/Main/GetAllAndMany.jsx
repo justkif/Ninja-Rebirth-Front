@@ -10,10 +10,10 @@ export default function GetAllAndMany({ setNinja, ninja }) {
             try {
                 const response = await fetch(text ? `http://localhost:8080/search?name=${text}` : `http://localhost:8080`);
 
-                if (response.status === 404) {
-                    setNinja([]);
-                } else {
+                if (response.ok) {
                     setNinja(await response.json());
+                } else {
+                    setNinja([]);
                 }
             } catch (error) {
                 console.log(error);
