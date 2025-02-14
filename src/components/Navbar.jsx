@@ -37,9 +37,11 @@ export default function Navbar({ isMobile }) {
                     <HiOutlineMenu className="size-[30px] cursor-pointer" onClick={handleMenu}/>
                 ) : (
                     <div className="flex item-center">
-                        <li className="cursor-pointer mr-8 hover:text-orange-200 transition-all duration-200">Add ninja</li>
                         {isLoggedIn ? (
-                            <li className="cursor-pointer hover:text-orange-200 transition-all duration-200" onClick={handleLogout}>Logout</li>
+                            <>
+                                <Link className="cursor-pointer mr-8 hover:text-orange-200 transition-all duration-200" to={`/create`}>Add ninja</Link>
+                                <span className="cursor-pointer hover:text-orange-200 transition-all duration-200" onClick={handleLogout}>Logout</span>
+                            </>
                         ) : (
                             <Link className="cursor-pointer hover:text-orange-200 transition-all duration-200" to={`/login`}>Login</Link>
                         )}
@@ -47,7 +49,7 @@ export default function Navbar({ isMobile }) {
                 )}
                 {openMenu && (
                     <div className="absolute right-8 bg-white p-6 text-center rounded-xl">
-                        <li className="cursor-pointer block">Add ninja</li>
+                        <Link className="cursor-pointer block" to={`/create`}>Add ninja</Link>
                         {isLoggedIn ? (
                             <li className="cursor-pointer block mt-2" onClick={handleLogout}>Logout</li>
                         ) : (
