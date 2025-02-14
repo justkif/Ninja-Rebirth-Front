@@ -12,13 +12,13 @@ export default function Navbar({ isMobile }) {
         setOpenMenu(!openMenu);
     }
     const handleLogout = () => {
-        localStorage.removeItem('Token');
+        localStorage.removeItem("Token");
         setIsLoggedIn(false);
-        navigate('/');
-    };
+        navigate(`/`);
+    }
 
     useEffect(() => {
-        const token = localStorage.getItem('Token');
+        const token = localStorage.getItem("Token");
         if (token) {
             setIsLoggedIn(true);
         }
@@ -28,9 +28,9 @@ export default function Navbar({ isMobile }) {
         <nav className="flex item-center">
             <Link className="flex item-center cursor-pointer" to={`/`}> 
                 <GiNinjaStar className="size-[30px]"/>
-                <div className="text-[20px] font-bold ml-1">NR Wiki</div>
+                <span className="text-[20px] font-bold ml-1">NR Wiki</span>
             </Link>
-            <ul className="ml-auto text[20px] font-bold">
+            <div className="ml-auto text[20px] font-bold">
                 {openMenu && isMobile ? (
                     <MdOutlineClose className="size-[30px] cursor-pointer" onClick={handleMenu}/>
                 ) : !openMenu && isMobile ? (
@@ -49,15 +49,17 @@ export default function Navbar({ isMobile }) {
                 )}
                 {openMenu && (
                     <div className="absolute right-8 bg-white p-6 text-center rounded-xl">
-                        <Link className="cursor-pointer block" to={`/create`}>Add ninja</Link>
                         {isLoggedIn ? (
-                            <li className="cursor-pointer block mt-2" onClick={handleLogout}>Logout</li>
+                            <>
+                                <Link className="cursor-pointer block" to={`/create`}>Add ninja</Link>
+                                <span className="cursor-pointer block mt-2" onClick={handleLogout}>Logout</span>
+                            </>
                         ) : (
                             <Link className="cursor-pointer block mt-2" to={`/login`}>Login</Link>
                         )}
                     </div>
                 )}
-            </ul>
+            </div>
         </nav>
     );
 }
