@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [unauthorized, setUnauthorized] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -23,8 +25,11 @@ export default function Login() {
             });
 
             if (response.ok) {
-                console.log('Login successful');
+                const data = await response.json();
+                localStorage.setItem('Token', data.token);
                 setUnauthorized(false);
+                navigate('/');
+
             } else {
                 setUnauthorized(true);  
             }
