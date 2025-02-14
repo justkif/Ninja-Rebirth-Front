@@ -2,17 +2,25 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
     const [unauthorized, setUnauthorized] = useState(false);
     const navigate = useNavigate();
-
+    const [credentials, setCredentials] = useState({
+        username: '',
+        password: ''
+    });
+    const handleCredentials = (event) => {
+        const { name, value } = event.target;
+        setCredentials((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
+    }
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         const payload = {
-            username: username,
-            password: password
+            username: credentials.username,
+            password: credentials.password
         }
 
         try {
@@ -37,7 +45,6 @@ export default function Login() {
             console.error(error);
         }
     }
-
     return (
         <div className="flex items-center justify-center h-screen">
             <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-lg space-y-4">
@@ -47,8 +54,8 @@ export default function Login() {
                         type="text" 
                         id="username" 
                         name="username" 
-                        value={username}
-                        onChange={(username) => setUsername(username.target.value)}
+                        value={credentials.username}
+                        onChange={handleCredentials}
                         className="w-full p-2 border border-gray-300 rounded mt-1"
                         placeholder="Enter your username" 
                         required 
@@ -60,8 +67,8 @@ export default function Login() {
                         type="password" 
                         id="password" 
                         name="password" 
-                        value={password}
-                        onChange={(password) => setPassword(password.target.value)}
+                        value={credentials.password}
+                        onChange={handleCredentials}
                         className="w-full p-2 border border-gray-300 rounded mt-1"
                         placeholder="Enter your password" 
                         required 
