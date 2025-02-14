@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function GetOne() {
     const id = useParams();
@@ -18,12 +18,12 @@ export default function GetOne() {
     }, []);
 
     return (
-        <section className="mt-2 text-[20px] font-bold">
-            <ul className="text-[50px] mb-2">{ninja.name}</ul>
-            <ul>Skill 1: {ninja.skill1}</ul>
-            <ul>Skill 2: {ninja.skill2}</ul>
-            <ul>Skill 3: {ninja.skill3}</ul>
-            <ul>Skill 4: {ninja.skill4}</ul>
+        <section className='mt-2 text-[20px] font-bold'>
+            <li className='text-[50px] mb-2'>{ninja.name}</li>
+            <li>Skill 1: {ninja.skill1}</li>
+            <li>Skill 2: {ninja.skill2}</li>
+            <li>Skill 3: {ninja.skill3}</li>
+            <li>Skill 4: {ninja.skill4}</li>
         </section>
     );
 }
