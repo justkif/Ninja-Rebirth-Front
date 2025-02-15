@@ -40,7 +40,13 @@ export default function UpdateOne({ passNinja }) {
                 },
                 body: JSON.stringify(payload)
             });
-            navigate(`/`);                         
+            
+            if (response.ok) {
+                navigate(`/`);                         
+            } else {
+                setupdateSucceed('Ninja not found');
+                window.scrollTo({ top: 0 });
+            }
         } catch (error) {
             setupdateSucceed('Update ninja failed, check if user logged in or not');
             window.scrollTo({ top: 0 });
