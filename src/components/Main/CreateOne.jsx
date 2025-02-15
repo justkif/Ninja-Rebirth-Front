@@ -126,7 +126,7 @@ export default function CreateOne() {
                 type='submit'
                 className='px-4 py-2 bg-gradient-to-b font-semibold from-orange-400 to-yellow-30 text-black rounded-md hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-indigo-500'
               >
-                Submit
+                Create
               </button>
             </div>
           </form>
