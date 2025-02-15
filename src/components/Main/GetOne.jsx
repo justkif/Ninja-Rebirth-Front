@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export default function GetOne() {
+export default function GetOne({ setPassNinja }) {
     const id = useParams();
     const [ninja, setNinja] = useState({}); 
 
@@ -9,13 +9,15 @@ export default function GetOne() {
         const GetOne = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/${id.id}`);
-                setNinja(await response.json());
+                const data = await response.json()
+                setNinja(data);
+                setPassNinja(data);
             } catch (error) {
                 console.log(error);
             }
         }
         GetOne();
-    }, []);
+    }, [setPassNinja]);
 
     return (
         <section className='mt-2 text-[20px] font-bold'>
