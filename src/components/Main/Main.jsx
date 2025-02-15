@@ -13,7 +13,7 @@ export default function Main() {
         <main>
             <Routes> 
                 <Route path='/' element={<GetAllAndMany ninja={ninja} setNinja={setNinja} />} />                
-                <Route path='/ninja/:id' element={<><GetOne setPassNinja={setPassNinja}/><DeleteOne /></>} />
+                <Route path='/ninja/:id' element={<><GetOne setPassNinja={setPassNinja} /><DeleteOne /></>} />
                 <Route path='/create' element={<CreateOne />} />
                 <Route path="/ninja/:id/update" element={<UpdateOne passNinja={passNinja} />} />
             </Routes>

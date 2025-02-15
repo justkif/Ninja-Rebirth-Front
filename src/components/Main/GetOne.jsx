@@ -9,7 +9,7 @@ export default function GetOne({ setPassNinja }) {
         const GetOne = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/${id.id}`);
-                const data = await response.json()
+                const data = await response.json();
                 setNinja(data);
                 setPassNinja(data);
             } catch (error) {
