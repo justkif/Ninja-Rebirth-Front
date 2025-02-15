@@ -11,14 +11,14 @@ export default function CreateOne() {
         skill3: '',
         skill4: ''
     });
-    const handleCreate = (event) => {
+    const handleData = (event) => {
         const { name, value } = event.target;
         setCreateOne((prevData) => ({
           ...prevData,
           [name]: value
         }));
     }
-    const handleSubmit = async (event) => {
+    const handleCreate = async (event) => {
         event.preventDefault();
 
         const payload = {
@@ -55,7 +55,7 @@ export default function CreateOne() {
     return (
         <div className='max-w-lg mx-auto mt-10 p-5 border border-gray-300 rounded-lg shadow-lg'>
           <h2 className='text-2xl font-semibold mb-6 text-center'>Create Ninja</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleCreate}>
             {createSucceed && (
                 <div className='text-red-500 text-l mt-2 font-semibold'>
                     {createSucceed}
@@ -68,7 +68,7 @@ export default function CreateOne() {
                 id='name'
                 name='name'
                 value={createOne.name}
-                onChange={handleCreate}
+                onChange={handleData}
                 className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
                 required
               />
@@ -79,7 +79,7 @@ export default function CreateOne() {
                 id='skill1'
                 name='skill1'
                 value={createOne.skill1}
-                onChange={handleCreate}
+                onChange={handleData}
                 rows='4'
                 className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
                 required
@@ -91,7 +91,7 @@ export default function CreateOne() {
                 id='skill2'
                 name='skill2'
                 value={createOne.skill2}
-                onChange={handleCreate}
+                onChange={handleData}
                 rows='4'
                 className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
                 required
@@ -103,7 +103,7 @@ export default function CreateOne() {
                 id='skill3'
                 name='skill3'
                 value={createOne.skill3}
-                onChange={handleCreate}
+                onChange={handleData}
                 rows='4'
                 className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
                 required
@@ -115,7 +115,7 @@ export default function CreateOne() {
                 id='skill4'
                 name='skill4'
                 value={createOne.skill4}
-                onChange={handleCreate}
+                onChange={handleData}
                 rows='4'
                 className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
                 required

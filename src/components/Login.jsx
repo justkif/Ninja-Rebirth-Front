@@ -15,7 +15,7 @@ export default function Login() {
             [name]: value
         }));
     }
-    const handleSubmit = async (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
 
         const payload = {
@@ -47,7 +47,7 @@ export default function Login() {
     }
     return (
         <div className='flex items-center justify-center h-screen'>
-            <form onSubmit={handleSubmit} className='bg-white p-6 rounded shadow-lg space-y-4'>
+            <form onSubmit={handleLogin} className='bg-white p-6 rounded shadow-lg space-y-4'>
                 <div>
                     <label className='block text-sm font-medium text-gray-700'>Username</label>
                     <input 
