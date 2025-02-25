@@ -55,10 +55,11 @@ export default function CreateOne() {
             } else if (response.status === 409) {
                 setCreateSucceed('Ninja existed');
                 window.scrollTo({ top: 0 });            
+            } else {
+              setCreateSucceed('Create ninja failed, check if user logged in or not');
+              window.scrollTo({ top: 0 });
             }
         } catch (error) {
-            setCreateSucceed('Create ninja failed, check if user logged in or not');
-            window.scrollTo({ top: 0 });
             console.error(error);
         }
     }
