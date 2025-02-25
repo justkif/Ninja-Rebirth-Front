@@ -11,7 +11,7 @@ export default function UpdateOne({ passNinja }) {
         skill2: `${passNinja.skill2}`,
         skill3: `${passNinja.skill3}`,
         skill4: `${passNinja.skill4}`,
-        imageurl: undefined
+        imageurl: ''
     });
     const handleData = (event) => {
         const { name, value } = event.target;
