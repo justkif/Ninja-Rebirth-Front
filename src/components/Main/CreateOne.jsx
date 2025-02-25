@@ -9,7 +9,8 @@ export default function CreateOne() {
         skill1: '',
         skill2: '',
         skill3: '',
-        skill4: ''
+        skill4: '',
+        picture: undefined
     });
     const handleData = (event) => {
         const { name, value } = event.target;
@@ -18,26 +19,35 @@ export default function CreateOne() {
           [name]: value
         }));
     }
+    const handleFile = (event) => {
+      const file = event.target.files[0];
+      setCreateOne((prevData) => ({
+          ...prevData,
+          picture: file
+      }));
+    }
     const handleCreate = async (event) => {
         event.preventDefault();
 
-        const payload = {
+        const formData = new FormData();
+        const ninjaJson = JSON.stringify({
             name: createOne.name,
             skill1: createOne.skill1,
             skill2: createOne.skill2,
             skill3: createOne.skill3,
             skill4: createOne.skill4
-        }
+        });
+        formData.append('ninja', ninjaJson);
+        formData.append('picture', createOne.picture);
 
         try {
             const token = localStorage.getItem('Token');
-            const response = await fetch(`http://localhost:8080`, {
+            const response = await fetch(`https://ninja-rebirth.onrender.com`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Token': `${token}`
                 },
-                body: JSON.stringify(payload)
+                body: formData
             });
 
             if (response.ok) {
@@ -117,6 +127,17 @@ export default function CreateOne() {
                 value={createOne.skill4}
                 onChange={handleData}
                 rows='4'
+                className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
+                required
+              />
+            </div>
+            <div className='mb-4'>
+              <label className='block text-sm font-medium text-gray-700'>Image File</label>
+              <input
+                type='file'
+                id='picture'
+                name='picture'
+                onChange={handleFile}
                 className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
                 required
               />

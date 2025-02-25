@@ -8,7 +8,7 @@ export default function GetOne({ setPassNinja }) {
     useEffect(() => {
         const GetOne = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/${id.id}`);
+                const response = await fetch(`https://ninja-rebirth.onrender.com/${id.id}`);
                 const data = await response.json();
                 setNinja(data);
                 setPassNinja(data);

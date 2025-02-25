@@ -8,7 +8,7 @@ export default function DeleteOne() {
             const confirmDelete = window.confirm('Are you sure you want to delete the ninja?');
             if (confirmDelete) {
                 const token = localStorage.getItem('Token');    
-                await fetch(`http://localhost:8080/${id.id}`, {
+                await fetch(`https://ninja-rebirth.onrender.com/${id.id}`, {
                     method: 'DELETE',
                     headers: { 'Token': `${token}` }
                 });                

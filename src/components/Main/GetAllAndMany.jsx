@@ -8,7 +8,7 @@ export default function GetAllAndMany({ setNinja, ninja }) {
     useEffect(() => {
         const Get = async () => {
             try {
-                const response = await fetch(text ? `http://localhost:8080/search?name=${text}` : `http://localhost:8080`);
+                const response = await fetch(text ? `https://ninja-rebirth.onrender.com/search?name=${text}` : `https://ninja-rebirth.onrender.com`);
 
                 if (response.ok) {
                     setNinja(await response.json());

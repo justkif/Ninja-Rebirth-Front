@@ -32,7 +32,7 @@ export default function UpdateOne({ passNinja }) {
 
         try {
             const token = localStorage.getItem('Token');
-            const response = await fetch(`http://localhost:8080/${id.id}`, {
+            const response = await fetch(`https://ninja-rebirth.onrender.com/${id.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
