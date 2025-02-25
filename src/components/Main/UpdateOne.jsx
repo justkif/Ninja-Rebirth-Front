@@ -10,7 +10,8 @@ export default function UpdateOne({ passNinja }) {
         skill1: `${passNinja.skill1}`,
         skill2: `${passNinja.skill2}`,
         skill3: `${passNinja.skill3}`,
-        skill4: `${passNinja.skill4}`
+        skill4: `${passNinja.skill4}`,
+        imageurl: undefined
     });
     const handleData = (event) => {
         const { name, value } = event.target;
@@ -27,7 +28,8 @@ export default function UpdateOne({ passNinja }) {
             skill1: updateOne.skill1,
             skill2: updateOne.skill2,
             skill3: updateOne.skill3,
-            skill4: updateOne.skill4
+            skill4: updateOne.skill4,
+            imageurl: updateOne.imageurl
         }
 
         try {
