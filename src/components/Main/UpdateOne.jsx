@@ -45,9 +45,6 @@ export default function UpdateOne({ passNinja }) {
             
             if (response.ok) {
                 navigate(`/`);                         
-            } else if (response.status === 404) {
-                setupdateSucceed('Ninja not found');
-                window.scrollTo({ top: 0 });
             } else {
                 setupdateSucceed('Update ninja failed, check if user logged in or not');
                 window.scrollTo({ top: 0 });
