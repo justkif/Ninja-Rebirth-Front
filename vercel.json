@@ -1,8 +1,8 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://ninja-rebirth-front.vercel.app"
-    }
-  ]
-}
+    "redirects": [
+      {
+        "source": "/:path*",
+        "destination": "/:path*"
+      }
+    ]
+  }
