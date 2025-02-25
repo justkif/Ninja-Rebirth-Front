@@ -1,17 +1,8 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static-build"
-      }
-    ],
-    "rewrites": [
-      {
-        "source": "/:path*",
-        "destination": "/index.html"
-      }
-    ],
-    "cleanUrls": true
-  }
-  
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://ninja-rebirth-front.vercel.app"
+    }
+  ]
+}
